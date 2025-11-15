@@ -100,7 +100,6 @@ class ColorDataLoader:
             image[h//4:3*h//4, center_x-1:center_x+1] = color
             
         elif digit == 2:
-            # Curved shape
             for i in range(5, 23):
                 for j in range(5, 23):
                     if (i-14)**2/100 + (j-14)**2/64 <= 1 and j > 14:
@@ -455,4 +454,5 @@ if __name__ == "__main__":
 
 
     
+
 

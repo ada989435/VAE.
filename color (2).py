@@ -66,7 +66,7 @@ class ColorDataLoader:
         return local_path
     
     def _get_digit_color(self, digit: int, version: str) -> np.ndarray:
-        """Get consistent colors for each digit class"""
+        
         color_palettes = {
             'm0': [
                 [1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0],
@@ -455,3 +455,4 @@ if __name__ == "__main__":
 
 
     
+

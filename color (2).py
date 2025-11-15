@@ -147,19 +147,15 @@ class FixedColorNeuralNetworkFactory:
         return Sequential([
             layers.InputLayer(input_shape=input_shape),
             
-            # First conv block
             layers.Conv2D(filters=32, kernel_size=3, strides=2, activation='relu', padding='same'),
             layers.BatchNormalization(),
             
-            # Second conv block  
             layers.Conv2D(filters=64, kernel_size=3, strides=2, activation='relu', padding='same'),
             layers.BatchNormalization(),
             
-            # Third conv block
             layers.Conv2D(filters=128, kernel_size=3, strides=1, activation='relu', padding='same'),
             layers.BatchNormalization(),
             
-            # Global features
             layers.GlobalAveragePooling2D(),
             layers.Dense(256, activation='relu'),
             layers.BatchNormalization(),
@@ -411,14 +407,14 @@ def main():
     model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=args.learning_rate))
     
     print(f"Model Configuration:")
-    print(f"  Dataset: Color MNIST")
-    print(f"  Version: {args.version}")
-    print(f"  Latent dim: {args.latent_dim}")
-    print(f"  Learning rate: {args.learning_rate}")
-    print(f"  Batch size: {args.batch_size}")
-    print(f"  Epochs: {args.epochs}")
-    print(f"  Fixed std: 0.75")
-    print(f"  KL weight (beta): 0.1")
+    print(f" Dataset: Color MNIST")
+    print(f" Version: {args.version}")
+    print(f" Latent dim: {args.latent_dim}")
+    print(f" Learning rate: {args.learning_rate}")
+    print(f" Batch size: {args.batch_size}")
+    print(f" Epochs: {args.epochs}")
+    print(f" Fixed std: 0.75")
+    print(f" KL weight (beta): 0.1")
     
     print(f"\nStarting training for {args.epochs} epochs...")
     history = model.fit(train_data, epochs=args.epochs, verbose=1)
@@ -451,6 +447,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
